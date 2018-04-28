@@ -1,0 +1,36 @@
+package com.xywei.rabbitmq;
+
+/**
+ * Project:rabbitmq-demo
+ * File:com.xywei.rabbitmq
+ * Author:xywei
+ * Email :weixiangyu@homolo.com
+ * Copyright 2004-2018 Homolo Co., Ltd. All rights reserved.
+ */
+import com.rabbitmq.client.*;
+
+public class EmitLog {
+
+    private static final String EXCHANGE_NAME = "logs";
+
+    public static void main(String[] argv) throws Exception {
+        //建立连接和通道
+        ConnectionFactory factory = new ConnectionFactory();
+        factory.setHost("localhost");
+        Connection connection = factory.newConnection();
+        Channel channel = connection.createChannel();
+
+        //声明路由以及路由的类型  BuiltinExchangeType.FANOUT扇形
+        channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.FANOUT);
+
+        String message = "msg...";
+
+        //发布消息
+        channel.basicPublish(EXCHANGE_NAME, "",  null, message.getBytes("UTF-8"));
+        System.out.println(" [x] Sent '" + message + "'");
+
+        //关闭连接和通道
+        channel.close();
+        connection.close();
+    }
+}
