@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
+        <!--test dev-->
         <dependency>
             <groupId>com.rabbitmq</groupId>
             <artifactId>amqp-client</artifactId>
