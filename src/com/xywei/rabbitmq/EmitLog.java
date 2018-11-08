@@ -7,7 +7,11 @@ package com.xywei.rabbitmq;
  * Email :weixiangyu@homolo.com
  * Copyright 2004-2018 Homolo Co., Ltd. All rights reserved.
  */
-import com.rabbitmq.client.*;
+
+import com.rabbitmq.client.BuiltinExchangeType;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
 
 public class EmitLog {
 
@@ -26,7 +30,7 @@ public class EmitLog {
         String message = "msg...";
 
         //发布消息
-        channel.basicPublish(EXCHANGE_NAME, "",  null, message.getBytes("UTF-8"));
+        channel.basicPublish(EXCHANGE_NAME, "", null, message.getBytes("UTF-8"));
         System.out.println(" [x] Sent '" + message + "'");
 
         //关闭连接和通道

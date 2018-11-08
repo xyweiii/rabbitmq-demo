@@ -1,6 +1,7 @@
 package com.xywei.rabbitmq;
 
 import com.rabbitmq.client.*;
+
 import java.io.IOException;
 
 public class Recv {

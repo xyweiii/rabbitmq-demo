@@ -7,10 +7,11 @@ package com.xywei.rabbitmq;
  * Email :weixiangyu@homolo.com
  * Copyright 2004-2018 Homolo Co., Ltd. All rights reserved.
  */
+
 import com.rabbitmq.client.BuiltinExchangeType;
-import com.rabbitmq.client.ConnectionFactory;
-import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
 
 public class EmitLogTopic {
 

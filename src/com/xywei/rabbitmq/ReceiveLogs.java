@@ -7,7 +7,9 @@ package com.xywei.rabbitmq;
  * Email :weixiangyu@homolo.com
  * Copyright 2004-2018 Homolo Co., Ltd. All rights reserved.
  */
+
 import com.rabbitmq.client.*;
+
 import java.io.IOException;
 
 public class ReceiveLogs {

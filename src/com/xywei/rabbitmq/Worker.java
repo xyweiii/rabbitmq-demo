@@ -1,12 +1,10 @@
 package com.xywei.rabbitmq;
 
 import com.rabbitmq.client.*;
-import org.apache.commons.lang3.time.DateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.Date;
 
 /**
@@ -19,7 +17,7 @@ import java.util.Date;
 
 public class Worker {
 
-    private  final Logger logger = LoggerFactory.getLogger(getClass());
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     private static final String TASK_QUEUE_NAME = "task_queue";
 
@@ -63,9 +61,6 @@ public class Worker {
             }
         }
         Date endDate = new Date();
-        System.out.println("  用时:"+(endDate.getTime()-startDate.getTime()));
-
-
-
+        System.out.println("  用时:" + (endDate.getTime() - startDate.getTime()));
     }
 }

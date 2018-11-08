@@ -7,6 +7,7 @@ package com.xywei.rabbitmq;
  * Email :weixiangyu@homolo.com
  * Copyright 2004-2018 Homolo Co., Ltd. All rights reserved.
  */
+
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
@@ -27,7 +28,7 @@ public class ReceiveLogsTopic {
         String queueName = channel.queueDeclare().getQueue();
 
         //
-        String bingingKeys[] = {"kern.*","*.critical"};
+        String bingingKeys[] = {"kern.*", "*.critical"};
 
         for (String bindingKey : bingingKeys) {
             channel.queueBind(queueName, EXCHANGE_NAME, bindingKey);
